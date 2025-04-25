@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AGS Apps</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>📱 AGS Apps Portfolio</h1>
+
+  <div class="app">
+    <h2>Land Area Calculator AGS</h2>
+    <p>Calculate land area in various units quickly and easily.</p>
+    <button onclick="downloadApk('downloads/land-area-calculator-ags.apk')">📥 Download</button>
+  </div>
+
+  <div class="app">
+    <h2>To Do List AGS</h2>
+    <p>Stay organized with this simple to-do list app.</p>
+    <button onclick="downloadApk('downloads/to-do-list-ags.apk')">📥 Download</button>
+  </div>
+
+  <script>
+    function downloadApk(filePath) {
+      const confirmDownload = confirm("Do you want to download this APK?");
+      if (confirmDownload) {
+        const link = document.createElement('a');
+        link.href = filePath;
+        link.download = '';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    }
+  </script>
+</body>
+</html>
